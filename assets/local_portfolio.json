@@ -59,8 +59,8 @@
             "suka": "2k",
             "deskripsi_pendek": "Integral merupakan aplikasi desktop yang bisa\ndigunakan untuk mengerjakan soal integral yang diambil\ndari gambar maupun teks!",
             "deskripsi_panjang": "Integral merupakan aplikasi desktop yang bisa\ndigunakan untuk mengerjakan soal integral yang diambil\ndari gambar maupun teks!",
-            "jenis": "Android",
-            "framework": "Kotlin",
+            "jenis": "Web",
+            "framework": "Laravel",
             "review": "Reviewed",
             "images": "image_1.png",
             "pengerjaan": "April 2023",
@@ -70,20 +70,20 @@
         },
         {
             "id": 5,
-            "judul": "Integral",
-            "nama": "Multiple Owners",
-            "rating": "3.9",
+            "judul": "Eleclean",
+            "nama": "Rival Swandy Irawan",
+            "rating": "4.5",
             "suka": "2k",
-            "deskripsi_pendek": "Integral merupakan aplikasi desktop yang bisa\ndigunakan untuk mengerjakan soal integral yang diambil\ndari gambar maupun teks!",
-            "deskripsi_panjang": "Integral merupakan aplikasi desktop yang bisa\ndigunakan untuk mengerjakan soal integral yang diambil\ndari gambar maupun teks!",
+            "deskripsi_pendek": "Eleclean merupakan aplikasi pemesanan jasa pembersih\nperangkat elektronik.",
+            "deskripsi_panjang": "Eleclean merupakan aplikasi pemesanan jasa pembersih\nperangkat elektronik.",
             "jenis": "Android",
             "framework": "Kotlin",
             "review": "Reviewed",
-            "images": "image_1.png",
-            "pengerjaan": "April 2023",
-            "rilis": "Dipublish",
-            "status": "Belum Dijual",
-            "harga": "1.000.000"
+            "images": "image_4.png",
+            "pengerjaan": "November 2022",
+            "rilis": "Belum Dipublish",
+            "status": "Dijual",
+            "harga": "625.000"
         }
     ]
 }

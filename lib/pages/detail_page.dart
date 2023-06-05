@@ -449,7 +449,7 @@ class DetailPageState extends State<DetailPage> {
                 child: Align(
                   alignment: Alignment.center,
                   child: Text(
-                    'Rp.' + portfolioItems.harga + ',-',
+                    'Rp.${portfolioItems.harga},-',
                     style: GoogleFonts.montserrat(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,

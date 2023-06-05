@@ -1,5 +1,5 @@
 {
-    "favorite": [
+    "application": [
         {
             "id": 1,
             "judul": "Integral",
@@ -8,14 +8,48 @@
             "suka": "2k",
             "deskripsi_pendek": "Integral merupakan aplikasi desktop yang bisa\ndigunakan untuk mengerjakan soal integral yang diambil\ndari gambar maupun teks!",
             "deskripsi_panjang": "Integral merupakan aplikasi desktop yang bisa\ndigunakan untuk mengerjakan soal integral yang diambil\ndari gambar maupun teks!",
-            "jenis": "Android",
-            "framework": "Kotlin",
+            "jenis": "Web",
+            "framework": "Laravel",
             "review": "Reviewed",
             "images": "image_1.png",
             "pengerjaan": "April 2023",
             "rilis": "Dipublish",
             "status": "Belum Dijual",
-            "harga": "1000000"
+            "harga": "1.000.000"
+        },
+        {
+            "id": 2,
+            "judul": "Lantera",
+            "nama": "Shofwan Qobus",
+            "rating": "4.2",
+            "suka": "2k",
+            "deskripsi_pendek": "Lantera merupakan aplikasi pendukung pada perangkat\niOS. Aplikasi ini memungkinkan kita mengoptimalkan\nkinerja baterai dari iOS.",
+            "deskripsi_panjang": "Lantera merupakan aplikasi pendukung pada perangkat\niOS. Aplikasi ini memungkinkan kita mengoptimalkan\nkinerja baterai dari iOS.",
+            "jenis": "iOS",
+            "framework": "Swift",
+            "review": "Reviewed",
+            "images": "image_2.png",
+            "pengerjaan": "Desember 2022",
+            "rilis": "Belum Dipublish",
+            "status": "Dijual",
+            "harga": "675.000"
+        },
+        {
+            "id": 3,
+            "judul": "DatVizual",
+            "nama": "Eptina Fatmawati",
+            "rating": "4.0",
+            "suka": "2k",
+            "deskripsi_pendek": "Butuh bantuan dengan visualisasi data pada website\nanda? DatVizual solusinya. Harga terjangkau!",
+            "deskripsi_panjang": "Butuh bantuan dengan visualisasi data pada website\nanda? DatVizual solusinya. Harga terjangkau",
+            "jenis": "Web",
+            "framework": "React.Js",
+            "review": "-",
+            "images": "image_3.png",
+            "pengerjaan": "Februari 2023",
+            "rilis": "Dipublish",
+            "status": "Belum Dijual",
+            "harga": "500.000"
         }
     ]
 }

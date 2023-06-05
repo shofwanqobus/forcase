@@ -1,15 +1,15 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+import 'package:forcase/models/portfolio_model.dart';
+import 'package:forcase/pages/detail_page.dart';
 import 'package:forcase/pages/cart_page.dart';
 import 'package:forcase/pages/explore_page.dart';
 import 'package:forcase/pages/profile_page.dart';
 import 'package:forcase/pages/search_page.dart';
 import 'package:forcase/pages/about_us.dart';
-import 'package:forcase/utils/state_enum.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
-import 'package:forcase/models/portfolio_model.dart';
-import 'package:forcase/pages/detail_page.dart';
-import 'package:forcase/provider/favorite_provider.dart';
 
 class FavoritePage extends StatelessWidget {
   const FavoritePage({super.key});
@@ -125,48 +125,52 @@ class FavoritePage extends StatelessWidget {
         ],
       ),
       body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
         child: Padding(
           padding: const EdgeInsets.all(24),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Consumer<FavoriteDatabaseProvider>(
-                builder: (context, value, child) {
-                  value.getFavoritePortfolios();
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.all(8),
+                child: Text(
+                  'Your Favorite Portfolio',
+                  style: GoogleFonts.montserrat(
+                    fontSize: 32,
+                    fontWeight: FontWeight.bold,
+                    color: const Color.fromRGBO(31, 32, 41, 1),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 15),
+              Padding(
+                padding: const EdgeInsets.all(16),
+                child: FutureBuilder<String>(
+                  future: DefaultAssetBundle.of(context)
+                      .loadString('local_favorite.json'),
+                  builder: (context, snapshot) {
+                    if (snapshot.hasData) {
+                      Map<String, dynamic> jsonMap = jsonDecode(snapshot.data!);
+                      final items = PortfolioModel.fromJson(jsonMap);
 
-                  if (value.portfolioState == ResultState.hasData) {
-                    return SizedBox(
-                      height: 450,
-                      child: ListView.builder(
-                        padding: const EdgeInsets.all(8),
+                      return ListView.builder(
+                        physics: const NeverScrollableScrollPhysics(),
                         scrollDirection: Axis.vertical,
-                        itemCount: value.items.length,
+                        shrinkWrap: true,
+                        itemCount: items.portfolioItems.length,
                         itemBuilder: (context, index) {
-                          return _portfolioCard(context, value.items[index]);
+                          return _portfolioCard(
+                              context, items.portfolioItems[index]);
                         },
-                      ),
-                    );
-                  } else if (value.portfolioState == ResultState.noData) {
-                    return Center(
-                      child: Column(
-                        children: [
-                          const Icon(Icons.info),
-                          Text(
-                            'No Favorite yet',
-                            style: GoogleFonts.montserrat(
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black,
-                            ),
-                          ),
-                        ],
-                      ),
-                    );
-                  } else {
-                    return const Center(child: Icon(Icons.hourglass_empty));
-                  }
-                },
+                      );
+                    } else {
+                      return const Center(
+                        child: CircularProgressIndicator(),
+                      );
+                    }
+                  },
+                ),
               ),
             ],
           ),
@@ -176,8 +180,7 @@ class FavoritePage extends StatelessWidget {
   }
 
   Widget _portfolioCard(BuildContext context, PortfolioItems items) {
-    return SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
+    return Card(
       child: InkWell(
         onTap: () => Navigator.push(
           context,

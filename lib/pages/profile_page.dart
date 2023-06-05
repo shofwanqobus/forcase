@@ -218,12 +218,12 @@ class _ProfilePage extends State<ProfilePage> {
                       padding: const EdgeInsets.symmetric(horizontal: 8),
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                            minimumSize: const Size(125, 50),
-                            backgroundColor:
-                                const Color.fromRGBO(31, 32, 41, 1),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20),
-                            )),
+                          minimumSize: const Size(125, 50),
+                          backgroundColor: const Color.fromRGBO(31, 32, 41, 1),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                        ),
                         onPressed: () {},
                         child: Text(
                           'Sunting Profil',
