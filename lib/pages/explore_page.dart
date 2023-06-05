@@ -4,20 +4,20 @@ import 'package:forcase/pages/cart_page.dart';
 import 'package:forcase/pages/favorite_page.dart';
 import 'package:forcase/pages/profile_page.dart';
 import 'package:forcase/pages/search_page.dart';
-import 'package:forcase/pages/tentang_kami.dart';
+import 'package:forcase/pages/about_us.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:forcase/models/portfolio_model.dart';
 import 'package:forcase/widget/portfolio_card_list.dart';
 
-class Eksplorasi extends StatefulWidget {
-  const Eksplorasi({super.key});
+class ExplorePage extends StatefulWidget {
+  const ExplorePage({super.key});
 
   @override
-  _Eksplorasi createState() => _Eksplorasi();
+  ExploreState createState() => ExploreState();
 }
 
-class _Eksplorasi extends State<Eksplorasi> {
+class ExploreState extends State<ExplorePage> {
   final _scrollable = ScrollController();
 
   @override
@@ -65,7 +65,7 @@ class _Eksplorasi extends State<Eksplorasi> {
             onPressed: () => Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => TentangKami(),
+                builder: (context) => const AboutUs(),
               ),
             ),
             child: Text(
@@ -137,9 +137,13 @@ class _Eksplorasi extends State<Eksplorasi> {
           mainAxisSize: MainAxisSize.min,
           children: [
             Container(
-              height: 200,
+              height: 150,
               width: double.infinity,
               decoration: const BoxDecoration(
+                borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(5),
+                  bottomRight: Radius.circular(5),
+                ),
                 color: Color.fromRGBO(31, 32, 41, 1),
               ),
               child: Column(
@@ -149,34 +153,9 @@ class _Eksplorasi extends State<Eksplorasi> {
                   Text(
                     'Eksplorasi Program yang Cocok denganmu!',
                     style: GoogleFonts.montserrat(
-                      fontSize: 24,
+                      fontSize: 36,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 20),
-                    child: Container(
-                      height: 40,
-                      width: 750,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      child: const Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 4),
-                            child: Icon(
-                              Icons.search,
-                              size: 30,
-                              color: Colors.grey,
-                            ),
-                          ),
-                        ],
-                      ),
                     ),
                   ),
                 ],

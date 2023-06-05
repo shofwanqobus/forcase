@@ -8,18 +8,9 @@ class PortfolioModel {
           portfolioItems: List<PortfolioItems>.from(
         (portfolio["application"] as List)
             .map((x) => PortfolioItems.fromJson(x))
-            .where((portfolioItems) =>
-                portfolioItems.id != null &&
-                portfolioItems.judul != null &&
-                portfolioItems.nama != null &&
-                portfolioItems.rating != null &&
-                portfolioItems.suka != null &&
-                portfolioItems.deskripsiPendek != null &&
-                portfolioItems.deksripsiPanjang != null &&
-                portfolioItems.jenis != null &&
-                portfolioItems.framework != null &&
-                portfolioItems.review != null &&
-                portfolioItems.images != null),
+            .where(
+              (portfolioItems) => portfolioItems.images != null,
+            ),
       ));
 }
 
@@ -27,7 +18,7 @@ class PortfolioItems {
   int id;
   String judul;
   String nama;
-  double rating;
+  String rating;
   String suka;
   String deskripsiPendek;
   String deksripsiPanjang;
@@ -38,7 +29,7 @@ class PortfolioItems {
   String pengerjaan;
   String rilis;
   String status;
-  int harga;
+  String harga;
 
   PortfolioItems({
     required this.id,
@@ -77,7 +68,7 @@ class PortfolioItems {
       );
 
   Map<String, dynamic> toJson() => {
-        "id": id,
+        "id": id.toString(),
         "judul": judul,
         "nama": nama,
         "rating": rating,

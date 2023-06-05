@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:forcase/pages/login_page.dart';
-import 'package:forcase/pages/tentang_kami.dart';
+import 'package:forcase/pages/about_us.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'package:forcase/pages/eksplorasi.dart';
+import 'package:forcase/pages/explore_page.dart';
 
 class LandingPage extends StatefulWidget {
   const LandingPage({super.key});
 
   @override
-  _LandingPage createState() => _LandingPage();
+  LandingPageState createState() => LandingPageState();
 }
 
-class _LandingPage extends State<LandingPage> {
+class LandingPageState extends State<LandingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,7 +45,7 @@ class _LandingPage extends State<LandingPage> {
             onPressed: () => Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => const Eksplorasi(),
+                builder: (context) => const ExplorePage(),
               ),
             ),
             child: Text(
@@ -62,7 +62,7 @@ class _LandingPage extends State<LandingPage> {
             onPressed: () => Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => TentangKami(),
+                builder: (context) => const AboutUs(),
               ),
             ),
             child: Text(

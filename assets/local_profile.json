@@ -1,0 +1,38 @@
+{
+    "application" : [
+        {
+            "id": 1,
+            "judul": "Basics: Daily To Do App",
+            "nama": "Rival Swandy Irawan",
+            "rating": "4.5",
+            "suka": "2k",
+            "deskripsi_pendek": "Basics merupakan aplikasi untuk mendukung pola hidup\nsehat anda. Aplikasi dapat dijalankan pada platform\nAndroid dengan versi minimal 9.0",
+            "deskripsi_panjang": "Basics adalah sebuah aplikasi android yang berguna sebagai daily course\napp, yang dibuat menggunakan bahasa Kotlin. Aplikasi ini dirancang\nuntuk membantu penggunanya dalam mempelajari keterampilan baru\nsecara berkala dan konsisten. Basics menyediakan kurikulum yang\nterstruktur dan mudah diikuti, dengan materi yang disajikan dalam\nbentuk teks, gambar, dan video.\n\nSelain itu, Basics juga memiliki fitur untuk membuat jadwal belajar dan\npengingat, sehingga pengguna dapat memantau kemajuan belajar\nmereka dan tetap teratur dalam membagi waktu. Aplikasi ini juga\nmenyediakan fitur untuk menghubungkan pengguna dengan komunitas\nbelajar yang lebih besar, sehingga mereka dapat saling berbagi tips dan\ndukungan.\n\nDengan adanya Basics, pengguna dapat meningkatkan pengetahuan\nmereka secara teratur dan efektif, serta mencapai tujuan belajar mereka\ndengan lebih mudah.",
+            "jenis": "Android",
+            "framework": "Kotlin",
+            "review": "Reviewed",
+            "images": "image.png",
+            "pengerjaan": "Januari 2023",
+            "rilis": "Belum Dipublish",
+            "status": "Dijual",
+            "harga": "575.000"
+        },
+        {
+            "id": 2,
+            "judul": "Eleclean",
+            "nama": "Rival Swandy Irawan",
+            "rating": "4.5",
+            "suka": "2k",
+            "deskripsi_pendek": "Eleclean merupakan aplikasi pemesanan jasa pembersih\nperangkat elektronik.",
+            "deskripsi_panjang": "Eleclean merupakan aplikasi pemesanan jasa pembersih\nperangkat elektronik.",
+            "jenis": "Android",
+            "framework": "Kotlin",
+            "review": "Reviewed",
+            "images": "image_4.png",
+            "pengerjaan": "November 2022",
+            "rilis": "Belum Dipublish",
+            "status": "Dijual",
+            "harga": "625.000"
+        }
+    ]
+}

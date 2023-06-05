@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:forcase/pages/cart_page.dart';
+import 'package:forcase/pages/explore_page.dart';
 import 'package:forcase/pages/profile_page.dart';
 import 'package:forcase/pages/search_page.dart';
+import 'package:forcase/pages/about_us.dart';
 import 'package:forcase/utils/state_enum.dart';
-import 'package:forcase/widget/portfolio_card_list.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:forcase/models/portfolio_model.dart';
@@ -42,7 +43,12 @@ class FavoritePage extends StatelessWidget {
           ),
           const Padding(padding: EdgeInsets.symmetric(horizontal: 16)),
           TextButton(
-            onPressed: () => Navigator.pop(context),
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const ExplorePage(),
+              ),
+            ),
             child: Text(
               'Eksplorasi',
               style: GoogleFonts.montserrat(
@@ -54,7 +60,12 @@ class FavoritePage extends StatelessWidget {
           ),
           const Padding(padding: EdgeInsets.symmetric(horizontal: 16)),
           TextButton(
-            onPressed: () {},
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const AboutUs(),
+              ),
+            ),
             child: Text(
               'Tentang Kami',
               style: GoogleFonts.montserrat(
@@ -132,7 +143,7 @@ class FavoritePage extends StatelessWidget {
                         scrollDirection: Axis.vertical,
                         itemCount: value.items.length,
                         itemBuilder: (context, index) {
-                          return PortfolioCard(value.items[index]);
+                          return _portfolioCard(context, value.items[index]);
                         },
                       ),
                     );
@@ -164,53 +175,68 @@ class FavoritePage extends StatelessWidget {
     );
   }
 
-  // Widget _portfolioCard(PortfolioItems items) {
-  //   return Consumer<DatabaseProvider>(builder: (context, provider, child) {
-  //     return FutureBuilder<bool>(
-  //         future: provider.isPortfolio(items.id),
-  //         builder: (context, snapshot) {
-  //           return Material(
-  //             child: ListTile(
-  //               leading: Hero(
-  //                 tag: items.images!,
-  //                 child: Image.asset(
-  //                   items.images!,
-  //                   height: 100,
-  //                   width: 150,
-  //                 ),
-  //               ),
-  //               title: Container(
-  //                 padding: const EdgeInsets.all(8),
-  //                 child: Text(
-  //                   items.judul,
-  //                   style: GoogleFonts.montserrat(
-  //                     fontSize: 14,
-  //                     fontWeight: FontWeight.bold,
-  //                   ),
-  //                 ),
-  //               ),
-  //               subtitle: Column(
-  //                 crossAxisAlignment: CrossAxisAlignment.start,
-  //                 children: [
-  //                   Text(
-  //                     items.nama,
-  //                     style: GoogleFonts.montserrat(
-  //                       fontSize: 12,
-  //                       fontWeight: FontWeight.w300,
-  //                     ),
-  //                   ),
-  //                   Text(
-  //                     items.deskripsiPendek,
-  //                     style: GoogleFonts.montserrat(
-  //                       fontSize: 12,
-  //                       fontWeight: FontWeight.w300,
-  //                     ),
-  //                   ),
-  //                 ],
-  //               ),
-  //             ),
-  //           );
-  //         });
-  //   });
-  // }
+  Widget _portfolioCard(BuildContext context, PortfolioItems items) {
+    return SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: InkWell(
+        onTap: () => Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) {
+            return DetailPage(portfolio: items);
+          }),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(24),
+          child: Row(
+            children: [
+              const SizedBox(width: 10),
+              ClipRRect(
+                borderRadius: const BorderRadius.all(Radius.circular(15)),
+                child: Image.asset(
+                  items.images!,
+                  height: 250,
+                  width: 250,
+                ),
+              ),
+              Container(
+                margin: const EdgeInsets.all(24),
+                alignment: Alignment.centerLeft,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.max,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      items.judul,
+                      style: GoogleFonts.montserrat(
+                          fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
+                    const SizedBox(height: 10),
+                    Container(
+                      alignment: Alignment.centerLeft,
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            items.nama,
+                            style: GoogleFonts.montserrat(fontSize: 16),
+                          ),
+                          const SizedBox(height: 10),
+                          Text(
+                            items.deskripsiPendek,
+                            style: GoogleFonts.montserrat(fontSize: 16),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
 }

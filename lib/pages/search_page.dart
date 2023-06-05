@@ -6,9 +6,9 @@ import 'package:flutter/material.dart';
 import 'package:forcase/models/portfolio_model.dart';
 import 'package:forcase/pages/cart_page.dart';
 import 'package:forcase/pages/detail_page.dart';
-import 'package:forcase/pages/eksplorasi.dart';
+import 'package:forcase/pages/explore_page.dart';
 import 'package:forcase/pages/profile_page.dart';
-import 'package:forcase/pages/tentang_kami.dart';
+import 'package:forcase/pages/about_us.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'favorite_page.dart';
@@ -17,10 +17,10 @@ class SearchPage extends StatefulWidget {
   const SearchPage({Key? key}) : super(key: key);
 
   @override
-  _SearchPage createState() => _SearchPage();
+  SearchPageState createState() => SearchPageState();
 }
 
-class _SearchPage extends State<SearchPage> {
+class SearchPageState extends State<SearchPage> {
   late TextEditingController _controller;
   var textInput = "";
   var state = "empty";
@@ -80,7 +80,7 @@ class _SearchPage extends State<SearchPage> {
             onPressed: () => Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => const Eksplorasi(),
+                builder: (context) => const ExplorePage(),
               ),
             ),
             child: Text(
@@ -97,7 +97,7 @@ class _SearchPage extends State<SearchPage> {
             onPressed: () => Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => TentangKami(),
+                builder: (context) => const AboutUs(),
               ),
             ),
             child: Text(
@@ -192,8 +192,13 @@ class _SearchPage extends State<SearchPage> {
                   });
                 },
                 decoration: InputDecoration(
+                  icon: const Icon(
+                    Icons.search,
+                    size: 25,
+                    color: Colors.black,
+                  ),
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(15),
+                    borderRadius: BorderRadius.circular(25),
                   ),
                   labelText: "Cari portofolio disini",
                   labelStyle: GoogleFonts.montserrat(
@@ -245,7 +250,7 @@ class _SearchPage extends State<SearchPage> {
 
   Widget _portfolioCard(BuildContext context, PortfolioItems items) {
     return SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
+      scrollDirection: Axis.vertical,
       child: InkWell(
         onTap: () => Navigator.push(
           context,

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:forcase/pages/tentang_kami.dart';
+import 'package:forcase/pages/about_us.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'package:forcase/pages/eksplorasi.dart';
+import 'package:forcase/pages/explore_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -44,7 +44,7 @@ class _LoginPage extends State<LoginPage> {
             onPressed: () => Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => const Eksplorasi(),
+                builder: (context) => const ExplorePage(),
               ),
             ),
             child: Text(
@@ -61,7 +61,7 @@ class _LoginPage extends State<LoginPage> {
             onPressed: () => Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => TentangKami(),
+                builder: (context) => const AboutUs(),
               ),
             ),
             child: Text(
@@ -265,10 +265,10 @@ class _LoginPage extends State<LoginPage> {
                           ),
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 4),
+                      const Padding(
+                        padding: EdgeInsets.symmetric(vertical: 4),
                         child: Row(
-                          children: const <Widget>[
+                          children: [
                             Expanded(
                               child: Divider(
                                 indent: 34,

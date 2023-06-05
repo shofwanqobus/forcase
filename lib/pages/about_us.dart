@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:forcase/pages/eksplorasi.dart';
-import 'package:forcase/pages/search_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'cart_page.dart';
-import 'favorite_page.dart';
+import 'package:forcase/pages/cart_page.dart';
+import 'package:forcase/pages/favorite_page.dart';
+import 'package:forcase/pages/explore_page.dart';
+import 'package:forcase/pages/search_page.dart';
 
-class TentangKami extends StatelessWidget {
+class AboutUs extends StatelessWidget {
+  const AboutUs({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,7 +41,7 @@ class TentangKami extends StatelessWidget {
             onPressed: () => Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => const Eksplorasi(),
+                builder: (context) => const ExplorePage(),
               ),
             ),
             child: Text(
